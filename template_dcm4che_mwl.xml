@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2025-07-09T16:46:39Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template_MWL_dcm4che</template>
+            <name>Template_MWL_dcm4che</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>MWL Monitoring</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>MWL availability check</name>
+                    <key>mwl.check</key>
+                    <applications>
+                        <application>
+                            <name>MWL Monitoring</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=0</expression>
+                            <name>MWL недоступен или пустой</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
