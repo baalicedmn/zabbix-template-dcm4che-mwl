@@ -29,7 +29,7 @@
    - DICOM IP и порт
    - Локальные пути к утилитам
 
-## � Использование скрипта (пример)
+## � Использование скрипта который выполнит запрос и подсчитает первые 3 ответа, содержащие тег PatientName (0010,0010)
 
 Скрипт может выглядеть так (например: `check_mwl.sh`):
 
@@ -39,8 +39,6 @@ MWLSCP="DCM4CHEE@127.0.0.1:11112"
 CALLING_AET="ZABBIX_CHECK"
 DCMMWL_BIN="/opt/dcm4chee-utils/bin/dcmmwl"
 TODAY="$(date +%Y%m%d)"
-
-# Выполнить запрос и подсчитать первые 3 ответа, содержащие тег PatientName (0010,0010)
 MATCHED_PATIENTS=$("$DCMMWL_BIN" "$MWLSCP" \
   -L "$CALLING_AET" \
   -date "$TODAY-$TODAY" \
