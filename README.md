@@ -16,7 +16,7 @@
 
 - **Zabbix версии:** 5.0
 - **DCM4CHE:** версия 2.x (например, 2.0.17)
-- **DICOM tools:** `dcm4che` CLI утилиты (`dcmmwl`)
+- **DICOM tools:** dcm4che CLI утилита (`dcmmwl`)
 - **Agent и External Script:** скрипт, который проверяет MWL запрос
 
 ## Установка
@@ -33,6 +33,10 @@
 
 Скрипт может выглядеть так (например: `check_mwl.sh`):
 
+<details>
+<summary>Показать код mpps_value_check.py</summary>
+
+```bash   
 #!/bin/bash
 
 MWLSCP="DCM4CHEE@127.0.0.1:11112"
@@ -49,6 +53,8 @@ if [ "$MATCHED_PATIENTS" -gt 0 ]; then
 else
   echo 0
 fi
+```
+</details>
 
 Сделать скрипт исполняемым chmod +x check_mwl.sh
 
