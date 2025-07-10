@@ -34,7 +34,7 @@
 Скрипт может выглядеть так (например: `check_mwl.sh`):
 
 <details>
-<summary>Показать код mpps_value_check.py</summary>
+<summary>Показать код check_mwl.sh</summary>
 
 ```bash   
 #!/bin/bash
